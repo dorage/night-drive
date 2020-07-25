@@ -109,7 +109,7 @@ const Router = () => {
             </NavBar>
             <Switch>
                 <Route exact path="/">
-                    <Redirect to="/tattoo" />
+                    <Redirect to="/profile" />
                 </Route>
                 <Route exact path="/profile" component={Profile} />
                 <Route exact path="/project" component={Project} />
