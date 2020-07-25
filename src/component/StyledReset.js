@@ -12,10 +12,10 @@ const GlobalStyles = createGlobalStyle`
         src: url(${myFont});
     }
     body{
-        font-family: DungGeunMo;
+        font-family: DungGeunMo, 'Press Start 2P';
     };
     button{
-        font-family: DungGeunMo;
+        font-family: DungGeunMo, 'Press Start 2P';
     }
 `;
 
