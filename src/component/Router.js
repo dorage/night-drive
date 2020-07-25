@@ -5,7 +5,7 @@ import Profile from '../router/Profile';
 import Project from '../router/Project';
 import Stack from '../router/Stack';
 import Tattoo from '../router/Tattoo';
-import { cssColor } from '../config';
+import { cssColor, device, screen } from '../config';
 
 const NavBar = styled.div`
     position: fixed;
@@ -15,7 +15,13 @@ const NavBar = styled.div`
 
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+
+    @media (max-width: ${screen.tablet}) {
+        display: none;
+    }
 `;
 
 const NavGroup = styled.div`
@@ -31,7 +37,7 @@ const RetroButton = styled.button`
     text-align: center;
     width: 100px;
     height: 40px;
-    font-size: 24px;
+    font-size: 24;
     line-height: 0px;
     cursor: pointer;
 
@@ -86,7 +92,6 @@ const Router = () => {
     return (
         <HashRouter>
             <NavBar>
-                <NavGroup></NavGroup>
                 <NavGroup>
                     <Link style={{ textDecoration: 'none' }} to="/profile">
                         <NavM>Profile</NavM>

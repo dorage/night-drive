@@ -17,7 +17,6 @@ import python from './static/image/stack/python.png';
 import react from './static/image/stack/react.png';
 import vscode from './static/image/stack/vscode.png';
 import flutter from './static/image/stack/flutter.png';
-import { Texture } from 'pixi.js';
 
 export const Assets = {
     profile: {
@@ -33,6 +32,26 @@ export const Assets = {
     },
     tattoo: { gameMachine },
     stack: { mongodb, node, js, python, react, vscode, flutter },
+};
+
+export const screen = {
+    desktopL: '1920px',
+    desktopM: '1440px',
+    desktopS: '1024px',
+    tablet: '768px',
+    mobileL: '425px',
+    mobileM: '375px',
+    mobileS: '320px',
+};
+
+export const device = {
+    desktopL: `(min-width: ${screen.desktopL})`,
+    desktopM: `(min-width: ${screen.desktopM})`,
+    desktopS: `(min-width: ${screen.desktopS})`,
+    tablet: `(min-width: ${screen.tablet})`,
+    mobileL: `(min-width: ${screen.mobileL})`,
+    mobileM: `(min-width: ${screen.mobileM})`,
+    mobileS: `(min-width: ${screen.mobileS})`,
 };
 
 export const cssColor = {
