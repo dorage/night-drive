@@ -59,7 +59,7 @@ const RetroButton = styled.button`
 const NavM = styled.div`
     margin: 0 10px;
 
-    font-size: 24px;
+    font-size: 16px;
     color: black;
     text-decoration: none;
     transition: 0.5s;

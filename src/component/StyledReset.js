@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
-import myFont from '../static/fonts/PIXEL.TTF';
 
 const GlobalStyles = createGlobalStyle`
     ${reset};
