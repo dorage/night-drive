@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Assets, device } from '../config';
+import { Assets, device, screen } from '../config';
 
 const Container = styled.div`
     display: flex;
@@ -50,39 +50,50 @@ const Image = styled.div`
         width: 100vw;
         height: 70%;
     }
+    @media (max-width: ${screen.mobileS}) {
+        width: 100vw;
+        height: 70%;
+    }
 `;
 
 const Name = styled.div`
     color: white;
+    padding: 0 10px;
 
     @media ${device.max} {
         font-size: 64px;
     }
     @media ${device.desktopL} {
         font-size: 64px;
+        margin-bottom: 10px;
     }
     @media ${device.desktopM} {
         font-size: 64px;
+        margin-bottom: 10px;
     }
     @media ${device.desktopS} {
         font-size: 64px;
+        margin-bottom: 10px;
     }
     @media ${device.tablet} {
-        font-size: 64px;
+        font-size: 60px;
     }
     @media ${device.mobileL} {
-        font-size: 48px;
+        font-size: 60px;
     }
     @media ${device.mobileM} {
         font-size: 48px;
     }
     @media ${device.mobileS} {
-        font-size: 48px;
+        font-size: 40px;
+    }
+    @media (max-width: ${screen.mobileS}) {
+        font-size: 28px;
     }
 `;
 const Description = styled.div`
     color: white;
-    font-size: 48px;
+    padding: 0 10px;
 
     @media ${device.max} {
         font-size: 64px;
@@ -106,7 +117,10 @@ const Description = styled.div`
         font-size: 32px;
     }
     @media ${device.mobileS} {
-        font-size: 32px;
+        font-size: 28px;
+    }
+    @media (max-width: ${screen.mobileS}) {
+        font-size: 22px;
     }
 `;
 

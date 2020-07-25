@@ -7,15 +7,11 @@ const GlobalStyles = createGlobalStyle`
     *{
         box-sizing:border-box;
     };
-    @font-face {
-        font-family: "PIXEL";
-        src: url(${myFont});
-    }
     body{
-        font-family: DungGeunMo, 'Press Start 2P';
+        font-family: 'Press Start 2P';
     };
     button{
-        font-family: DungGeunMo, 'Press Start 2P';
+        font-family: 'Press Start 2P';
     }
 `;
 
