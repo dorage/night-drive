@@ -29,7 +29,7 @@ const Overlay = styled.div`
     justify-items: center;
     align-items: center;
 
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: transparent;
 `;
 
 const Presenter = ({ windowWidth, windowHeight }) => (
