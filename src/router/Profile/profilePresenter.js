@@ -34,11 +34,14 @@ const Overlay = styled.div`
     justify-items: center;
     align-items: center;
 
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0);
 `;
 
 const Presenter = ({ windowWidth, windowHeight }) => (
     <>
+        <Overlay>
+            <Portrait />
+        </Overlay>
         <Container>
             <Stage
                 width={windowWidth}
