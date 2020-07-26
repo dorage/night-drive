@@ -14,10 +14,6 @@ const Container = styled.div`
     width: 100vw;
     height: ${(props) => `${props.height}px`};
     background-color: hotpink;
-
-    @media (max-width: ${screen.tablet}) {
-        padding-top: 0px;
-    }
 `;
 const Overlay = styled.div`
     position: absolute;
@@ -37,39 +33,37 @@ const Overlay = styled.div`
 `;
 
 const Presenter = ({ windowWidth, windowHeight }) => (
-    <>
-        <Container height={windowHeight}>
-            <Overlay>
-                <Portrait />
-            </Overlay>
-            <Stage
-                width={windowWidth}
-                height={windowHeight}
-                options={{ backgroundColor: 0x000000 }}
-            >
-                <AppConsumer>
-                    {(app) => {
-                        app.renderer.autoDensity = true;
-                        app.resize(windowWidth, windowHeight);
-                        return (
-                            <>
-                                <Ground
-                                    app={app}
-                                    windowWidth={windowWidth}
-                                    windowHeight={windowHeight}
-                                />
-                                <Car
-                                    app={app}
-                                    windowWidth={windowWidth}
-                                    windowHeight={windowHeight}
-                                />
-                            </>
-                        );
-                    }}
-                </AppConsumer>
-            </Stage>
-        </Container>
-    </>
+    <Container height={windowHeight}>
+        <Overlay>
+            <Portrait />
+        </Overlay>
+        <Stage
+            width={windowWidth}
+            height={windowHeight}
+            options={{ backgroundColor: 0x000000 }}
+        >
+            <AppConsumer>
+                {(app) => {
+                    app.renderer.autoDensity = true;
+                    app.resize(windowWidth, windowHeight);
+                    return (
+                        <>
+                            <Ground
+                                app={app}
+                                windowWidth={windowWidth}
+                                windowHeight={windowHeight}
+                            />
+                            <Car
+                                app={app}
+                                windowWidth={windowWidth}
+                                windowHeight={windowHeight}
+                            />
+                        </>
+                    );
+                }}
+            </AppConsumer>
+        </Stage>
+    </Container>
 );
 
 export default Presenter;
