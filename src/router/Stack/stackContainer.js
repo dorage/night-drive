@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectPresenter from './projectPresenter';
+import StackPresenter from './stackPresenter';
 
 class Controller extends React.Component {
     constructor(props) {
@@ -9,7 +9,7 @@ class Controller extends React.Component {
     }
 
     render() {
-        return <ProjectPresenter />;
+        return <StackPresenter />;
     }
 }
 

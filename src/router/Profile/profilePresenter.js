@@ -27,6 +27,7 @@ const Overlay = styled.div`
     right: 0;
     bottom: 0;
     z-index: 2;
+    padding-top: 20px;
 
     display: flex;
     flex-direction: column;

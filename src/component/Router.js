@@ -46,8 +46,8 @@ const RetroButton = styled.button`
     background-color: ${cssColor.program.grey};
     color: black;
     text-align: center;
-    width: 110px;
-    height: 40px;
+    width: ${(props) => props.width};
+    height: ${(props) => props.height};
     font-size: 14px;
     line-height: 0px;
     cursor: pointer;
@@ -92,13 +92,24 @@ const MobileNavBar = styled.div`
     width: 100vw;
     height: 50px;
     padding: 5px 20px;
-    z-index: 4;
+    z-index: 99;
 
     display: none;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row-reverse;
+    align-items: center;
 
-    background-color: transparent;
+    background-color: ${(props) =>
+        props.bgVisible ? cssColor.program.blue : 'transparent'};
+    border-width: 3px;
+    border-style: solid;
+    border-top-color: ${(props) =>
+        props.bgVisible ? cssColor.program.lightBorder : 'transparent'};
+    border-left-color: ${(props) =>
+        props.bgVisible ? cssColor.program.lightBorder : 'transparent'};
+    border-right-color: ${(props) =>
+        props.bgVisible ? cssColor.program.darkGrey : 'transparent'};
+    border-bottom-color: ${(props) =>
+        props.bgVisible ? cssColor.program.darkGrey : 'transparent'};
 
     @media (max-width: ${screen.desktopS}) {
         display: flex;
@@ -109,76 +120,84 @@ const MobileNavModal = styled.div`
     top: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 3;
+    padding: 20% 0;
+    z-index: 98;
 
     display: ${(props) => (props.display ? 'flex' : 'none')};
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 
-    background-color: white;
+    background-color: ${cssColor.program.grey};
 `;
-
-const Icon = styled.div`
-    background-image: url(${(props) => props.src});
-    background-size: contain;
-    background-repeat: none;
-    background-position: center;
-
-    width: 40px;
-    height: 40px;
-
-    @media (min-width: ${screen.desktopS}) {
-        display: none;
-    }
-`;
-
-function copyText() {
-    /* Get the text field */
-    var copyText = document.getElementById('email');
-
-    /* Select the text field */
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-
-    /* Copy the text inside the text field */
-    document.execCommand('copy');
-
-    /* Alert the copied text */
-    alert('이메일 복사 완료!');
-}
 
 const Router = () => {
-    const [displayModal, setDisplayModal] = useState(true);
+    const [displayModal, setDisplayModal] = useState(false);
+    const copyText = () => {
+        var copyText = document.getElementById('email');
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+        /* Copy the text inside the text field */
+        document.execCommand('copy');
+
+        /* Alert the copied text */
+        alert('이메일 복사 완료!');
+    };
+    const linkGithub = () => {
+        window.open('https://github.com/dorage', '_blank');
+    };
     return (
         <HashRouter>
             {/* mobile */}
-            <MobileNavBar>
-                <FontAwesomeIcon
-                    icon={displayModal ? faTimes : faBars}
-                    color={displayModal ? 'black' : 'white'}
-                    size="lg"
-                    onClick={() => setDisplayModal(!displayModal)}
-                />
+            <MobileNavBar bgVisible={displayModal}>
+                <RetroButton width={'35px'} height={'35px'}>
+                    <FontAwesomeIcon
+                        icon={displayModal ? faTimes : faBars}
+                        color={displayModal ? 'black' : 'white'}
+                        size="lg"
+                        onClick={() => setDisplayModal(!displayModal)}
+                    />
+                </RetroButton>
             </MobileNavBar>
             <MobileNavModal display={displayModal}>
-                <Link style={{ textDecoration: 'none' }} to="/profile">
+                <Link
+                    style={{ textDecoration: 'none' }}
+                    to="/profile"
+                    onClick={() => setDisplayModal(!displayModal)}
+                >
                     <Nav>Profile</Nav>
                 </Link>
-                <Link style={{ textDecoration: 'none' }} to="/project">
+                <Link
+                    style={{ textDecoration: 'none' }}
+                    to="/project"
+                    onClick={() => setDisplayModal(!displayModal)}
+                >
                     <Nav>Project</Nav>
                 </Link>
-                <Link style={{ textDecoration: 'none' }} to="/stack">
+                <Link
+                    style={{ textDecoration: 'none' }}
+                    to="/stack"
+                    onClick={() => setDisplayModal(!displayModal)}
+                >
                     <Nav>Stack</Nav>
                 </Link>
-                <Link style={{ textDecoration: 'none' }} to="/tattoo">
+                <Link
+                    style={{ textDecoration: 'none' }}
+                    to="/tattoo"
+                    onClick={() => setDisplayModal(!displayModal)}
+                >
                     <Nav>Tattoo</Nav>
                 </Link>
                 <Email id="email" value="baloonflower554@gmail.com" />
-                <RetroButton onClick={copyText}>Email</RetroButton>
-                <a href="https://github.com/dorage" target="popup">
-                    <RetroButton>Github</RetroButton>
-                </a>
+                <RetroButton width="110px" height="40px" onClick={copyText}>
+                    Email
+                </RetroButton>
+                <RetroButton width="110px" height="40px" onClick={linkGithub}>
+                    Github
+                </RetroButton>
             </MobileNavModal>
             {/* web */}
             <NavBar>
@@ -196,10 +215,16 @@ const Router = () => {
                         <Nav>Tattoo</Nav>
                     </Link>
                     <Email id="email" value="baloonflower554@gmail.com" />
-                    <RetroButton onClick={copyText}>Email</RetroButton>
-                    <a href="https://github.com/dorage" target="popup">
-                        <RetroButton>Github</RetroButton>
-                    </a>
+                    <RetroButton width="110px" height="40px" onClick={copyText}>
+                        Email
+                    </RetroButton>
+                    <RetroButton
+                        width="110px"
+                        height="40px"
+                        onClick={linkGithub}
+                    >
+                        Github
+                    </RetroButton>
                 </NavGroup>
             </NavBar>
             <Switch>

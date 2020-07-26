@@ -12,10 +12,6 @@ const Container = styled.div`
     align-items: center;
 `;
 
-// background color
-// mouse drag move
-// tattoo image
-// interact - information popup
 const Presenter = () => <Container></Container>;
 
 export default Presenter;
