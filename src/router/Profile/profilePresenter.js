@@ -21,7 +21,7 @@ const Container = styled.div`
 const Overlay = styled.div`
     position: fixed;
     width: 100vw;
-    height: calc(100vh);
+    height: 90vh;
     top: 0;
     left: 0;
     right: 0;
