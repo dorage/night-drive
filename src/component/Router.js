@@ -153,12 +153,15 @@ const Router = () => {
         <HashRouter>
             {/* mobile */}
             <MobileNavBar bgVisible={displayModal}>
-                <RetroButton width={'35px'} height={'35px'}>
+                <RetroButton
+                    width={'35px'}
+                    height={'35px'}
+                    onClick={() => setDisplayModal(!displayModal)}
+                >
                     <FontAwesomeIcon
                         icon={displayModal ? faTimes : faBars}
                         color={displayModal ? 'black' : 'white'}
                         size="lg"
-                        onClick={() => setDisplayModal(!displayModal)}
                     />
                 </RetroButton>
             </MobileNavBar>
