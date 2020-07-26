@@ -12,7 +12,7 @@ settings.SCALE_MODE = SCALE_MODES.NEAREST;
 const Container = styled.div`
     position: static;
     width: 100vw;
-    height: 100vh;
+    height: ${(props) => `${props.height}px`};
     background-color: hotpink;
 
     @media (max-width: ${screen.tablet}) {
@@ -38,7 +38,7 @@ const Overlay = styled.div`
 
 const Presenter = ({ windowWidth, windowHeight }) => (
     <>
-        <Container>
+        <Container height={windowHeight}>
             <Overlay>
                 <Portrait />
             </Overlay>
