@@ -11,8 +11,8 @@ settings.SCALE_MODE = SCALE_MODES.NEAREST;
 
 const Container = styled.div`
     position: static;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 
     @media (max-width: ${screen.tablet}) {
         padding-top: 0px;
