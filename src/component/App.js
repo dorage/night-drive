@@ -3,10 +3,7 @@ import styled from 'styled-components';
 import StyledReset from './StyledReset';
 import Router from './Router';
 
-const Container = styled.div`
-    width: 100vw;
-    height: 100vh;
-`;
+const Container = styled.div``;
 
 const App = () => {
     return (
