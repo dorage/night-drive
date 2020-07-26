@@ -33,6 +33,8 @@ const Overlay = styled.div`
     flex-direction: column;
     justify-items: center;
     align-items: center;
+
+    background-color: hotpink;
 `;
 
 const Presenter = ({ windowWidth, windowHeight }) => (
