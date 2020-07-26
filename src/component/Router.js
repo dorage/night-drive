@@ -67,6 +67,10 @@ const RetroButton = styled.button`
         border-style: none;
         outline: none;
     }
+
+    @media (max-width: ${screen.desktopS}) {
+        font-size: 16px;
+    }
 `;
 
 const Nav = styled.div`
@@ -80,6 +84,14 @@ const Nav = styled.div`
     :hover {
         color: rgb(255, 0, 255);
         font-size: 16px;
+    }
+
+    @media (max-width: ${screen.desktopS}) {
+        font-size: 24px;
+        :hover {
+            color: rgb(255, 0, 255);
+            font-size: 24px;
+        }
     }
 `;
 const Email = styled.input`
@@ -120,7 +132,7 @@ const MobileNavModal = styled.div`
     top: 0;
     width: 100vw;
     height: 100vh;
-    padding: 20% 0;
+    padding: 25% 0;
     z-index: 98;
 
     display: ${(props) => (props.display ? 'flex' : 'none')};
@@ -161,7 +173,6 @@ const Router = () => {
                     <FontAwesomeIcon
                         icon={displayModal ? faTimes : faBars}
                         color={displayModal ? 'black' : 'white'}
-                        size="lg"
                     />
                 </RetroButton>
             </MobileNavBar>
@@ -195,12 +206,19 @@ const Router = () => {
                     <Nav>Tattoo</Nav>
                 </Link>
                 <Email id="email" value="baloonflower554@gmail.com" />
-                <RetroButton width="110px" height="40px" onClick={copyText}>
-                    Email
-                </RetroButton>
-                <RetroButton width="110px" height="40px" onClick={linkGithub}>
-                    Github
-                </RetroButton>
+                <span />
+                <div>
+                    <RetroButton width="120px" height="40px" onClick={copyText}>
+                        Email
+                    </RetroButton>
+                    <RetroButton
+                        width="120px"
+                        height="40px"
+                        onClick={linkGithub}
+                    >
+                        Github
+                    </RetroButton>
+                </div>
             </MobileNavModal>
             {/* web */}
             <NavBar>
