@@ -16,20 +16,18 @@ const Container = styled.div`
     background-color: hotpink;
 `;
 const Overlay = styled.div`
-    position: absolute;
+    position: fixed;
     width: 100vw;
-    height: 90vh;
-    top: 0;
+    height: 80vh;
+    top: 50px;
     left: 0;
     z-index: 2;
-    padding-top: 70px;
+    padding-top: 20px;
 
     display: flex;
     flex-direction: column;
     justify-items: center;
     align-items: center;
-
-    background-color: transparent;
 `;
 
 const Presenter = ({ windowWidth, windowHeight }) => (
