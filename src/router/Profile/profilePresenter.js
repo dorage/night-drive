@@ -13,6 +13,7 @@ const Container = styled.div`
     position: static;
     width: 100vw;
     height: 100vh;
+    background-color: hotpink;
 
     @media (max-width: ${screen.tablet}) {
         padding-top: 0px;
@@ -32,7 +33,7 @@ const Overlay = styled.div`
     justify-items: center;
     align-items: center;
 
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0.5);
 `;
 
 const Presenter = ({ windowWidth, windowHeight }) => (
