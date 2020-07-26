@@ -19,7 +19,7 @@ const Container = styled.div`
     }
 `;
 const Overlay = styled.div`
-    position: fixed;
+    position: absolute;
     width: 100vw;
     height: 90vh;
     top: 0;
