@@ -34,7 +34,6 @@ const Overlay = styled.div`
     align-items: center;
 `;
 
-// ticker 추가해서 마우스 이동 방향으로 차가 점점 움직이는 형태로 변경하기
 const Presenter = ({ windowWidth, windowHeight }) => (
     <>
         <Overlay>

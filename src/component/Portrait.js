@@ -12,8 +12,7 @@ const Container = styled.div`
 `;
 
 const Image = styled.div`
-    background-image: url(${(props) => props.original});
-
+    background-image: url(${(props) => props.src});
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -127,10 +126,7 @@ const Description = styled.div`
 const Portrait = () => {
     return (
         <Container>
-            <Image
-                original={Assets.portrait.pixel}
-                hover={Assets.portrait.original}
-            />
+            <Image src={Assets.portrait.pixel} />
             <Name>KangHyun Lee</Name>
             <Description>Front-End Developer</Description>
         </Container>

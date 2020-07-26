@@ -17,6 +17,8 @@ import python from './static/image/stack/python.png';
 import react from './static/image/stack/react.png';
 import vscode from './static/image/stack/vscode.png';
 import flutter from './static/image/stack/flutter.png';
+// navbar
+import iconMenu from './static/image/icon/menu.png';
 
 export const Assets = {
     profile: {
@@ -32,6 +34,7 @@ export const Assets = {
     },
     tattoo: { gameMachine },
     stack: { mongodb, node, js, python, react, vscode, flutter },
+    icon: { menu: iconMenu },
 };
 
 export const screen = {
@@ -61,6 +64,7 @@ export const cssColor = {
     program: {
         blue: '#000080',
         grey: `#c6c6c6`,
+        darkGrey: `#dddddd`,
         lightBorder: '#FFFFFF',
         darkBorder: '#000000',
     },
