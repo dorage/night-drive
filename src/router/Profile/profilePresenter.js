@@ -39,9 +39,6 @@ const Overlay = styled.div`
 
 const Presenter = ({ windowWidth, windowHeight }) => (
     <>
-        <Overlay>
-            <Portrait />
-        </Overlay>
         <Container>
             <Stage
                 width={windowWidth}
