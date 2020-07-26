@@ -17,6 +17,10 @@ import python from './static/image/stack/python.png';
 import react from './static/image/stack/react.png';
 import vscode from './static/image/stack/vscode.png';
 import flutter from './static/image/stack/flutter.png';
+import dart from './static/image/stack/dart.png';
+import html from './static/image/stack/html.png';
+import css from './static/image/stack/css.png';
+import unity from './static/image/stack/unity.jpg';
 
 export const Assets = {
     profile: {
@@ -31,7 +35,19 @@ export const Assets = {
         pixel: portraitPixel,
     },
     tattoo: { gameMachine },
-    stack: { mongodb, node, js, python, react, vscode, flutter },
+    stack: {
+        mongodb,
+        node,
+        js,
+        python,
+        react,
+        vscode,
+        flutter,
+        dart,
+        html,
+        css,
+        unity,
+    },
 };
 
 export const screen = {
@@ -67,4 +83,14 @@ export const cssColor = {
     },
 };
 
-export const nothing = null;
+export const stacks = [
+    { src: Assets.stack.html, name: 'HTML', level: 3 },
+    { src: Assets.stack.css, name: 'CSS', level: 2 },
+    { src: Assets.stack.flutter, name: 'Flutter', level: 2 },
+    { src: Assets.stack.dart, name: 'Dart', level: 1 },
+    { src: Assets.stack.react, name: 'ReactJS', level: 2 },
+    { src: Assets.stack.python, name: 'Python', level: 2 },
+    { src: Assets.stack.js, name: 'JS ES6', level: 2 },
+    { src: Assets.stack.mongodb, name: 'MongoDB', level: 2 },
+    { src: Assets.stack.unity, name: 'Unity', level: 2 },
+];

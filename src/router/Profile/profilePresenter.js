@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Stage, AppConsumer } from '@inlet/react-pixi';
 import { settings, SCALE_MODES } from 'pixi.js';
-import { screen } from '../../config';
 import Ground from './component/ground';
 import Car from './component/car';
 import Portrait from '../../component/Portrait';
@@ -13,7 +12,6 @@ const Container = styled.div`
     position: static;
     width: 100vw;
     height: ${(props) => `${props.height}px`};
-    background-color: hotpink;
 `;
 const Overlay = styled.div`
     position: fixed;
