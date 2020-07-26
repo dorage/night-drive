@@ -34,7 +34,7 @@ const Overlay = styled.div`
     justify-items: center;
     align-items: center;
 
-    background-color: hotpink;
+    background-color: transparent;
 `;
 
 const Presenter = ({ windowWidth, windowHeight }) => (
