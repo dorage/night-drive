@@ -21,13 +21,13 @@ const Container = styled.div`
 const Overlay = styled.div`
     position: fixed;
     width: 100vw;
-    height: calc(100vh-50px);
-    top: 50px;
+    height: calc(100vh);
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 2;
-    padding-top: 20px;
+    padding-top: 70px;
 
     display: flex;
     flex-direction: column;
