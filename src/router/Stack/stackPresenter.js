@@ -8,8 +8,10 @@ const Container = styled.div`
     padding: 50px 20px;
 
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 350px));
-    grid-template-rows: repeat(auto-fill, minmax(200px, 250px));
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
+    grid-template-rows: repeat(auto-fill, 1fr);
     justify-content: center;
     align-items: center;
     overflow: scroll;
@@ -21,7 +23,6 @@ const Header = styled.div`
 const Stack = styled.div`
     width: 300px;
     height: 200px;
-    margin: 10px 20px;
     padding: 10px;
 
     display: flex;
