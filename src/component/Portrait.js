@@ -58,7 +58,6 @@ const Image = styled.div`
 const Name = styled.div`
     color: white;
     padding: 0 10px;
-
     @media ${device.max} {
         font-size: 64px;
     }

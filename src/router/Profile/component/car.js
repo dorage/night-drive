@@ -59,12 +59,14 @@ class Car extends React.Component {
         return (
             <>
                 <Sprite
+                    ref={(obj) => (window.car = obj)}
                     image={Assets.profile.carRG}
                     anchor={{ x: 0.5, y: 1 }}
                     scale={(3 / 1080) * windowHeight}
                     alpha={0.3}
                     x={oldX3}
                     y={(windowHeight * 2) / 3 + (windowHeight * 2) / 9}
+                    zIndex={1}
                 />
                 <Sprite
                     image={Assets.profile.carGB}
@@ -73,6 +75,7 @@ class Car extends React.Component {
                     alpha={0.3}
                     x={oldX2}
                     y={(windowHeight * 2) / 3 + (windowHeight * 2) / 9}
+                    zIndex={1}
                 />
                 <Sprite
                     image={Assets.profile.carRB}
@@ -81,6 +84,7 @@ class Car extends React.Component {
                     alpha={0.3}
                     x={oldX1}
                     y={(windowHeight * 2) / 3 + (windowHeight * 2) / 9}
+                    zIndex={1}
                 />
                 <Sprite
                     image={Assets.profile.car}
@@ -88,6 +92,7 @@ class Car extends React.Component {
                     scale={(3 / 1080) * windowHeight}
                     x={currentX}
                     y={(windowHeight * 2) / 3 + (windowHeight * 2) / 9}
+                    zIndex={1}
                 />
             </>
         );

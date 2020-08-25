@@ -1,16 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import { stacks, screen } from '../../config';
+import { stacks, screen, Assets } from '../../config';
 
 const Container = styled.div`
     width: 100vw;
     height: 100vh;
-    padding-top: 50px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding: 50px 20px;
 
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 350px));
+    grid-template-rows: repeat(auto-fill, minmax(200px, 250px));
     justify-content: center;
     align-items: center;
     overflow: scroll;
@@ -21,18 +20,32 @@ const Header = styled.div`
 
 const Stack = styled.div`
     width: 300px;
+    height: 200px;
     margin: 10px 20px;
+    padding: 10px;
 
     display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid rgb(80, 80, 80);
+    border-image: url(${Assets.stack.border}) 10 / 32px;
+    image-rendering: pixelated;
+
+    cursor: pointer;
 
     @media (max-width: ${screen.desktopS}) {
         width: 100%;
     }
+    :hover,
+    :active {
+        border-radius: 20px;
+        background-color: rgb(200, 200, 200);
+    }
 `;
 
 const Icon = styled.div`
-    width: 25vw;
-    height: 25vw;
+    width: 180px;
+    height: 180px;
 
     background-image: url(${(props) => props.src});
     background-size: contain;

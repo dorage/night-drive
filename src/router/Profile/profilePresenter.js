@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Stage, AppConsumer } from '@inlet/react-pixi';
+import { Stage, AppConsumer, Container } from '@inlet/react-pixi';
 import { settings, SCALE_MODES } from 'pixi.js';
 import Ground from './component/ground';
 import Car from './component/car';
+import Pizza from './component/pizza';
 import Portrait from '../../component/Portrait';
 
 settings.SCALE_MODE = SCALE_MODES.NEAREST;
 
-const Container = styled.div`
+const PresenterContainer = styled.div`
     position: static;
     width: 100vw;
     height: ${(props) => `${props.height}px`};
@@ -29,7 +30,7 @@ const Overlay = styled.div`
 `;
 
 const Presenter = ({ windowWidth, windowHeight }) => (
-    <Container height={windowHeight}>
+    <PresenterContainer height={windowHeight}>
         <Overlay>
             <Portrait />
         </Overlay>
@@ -43,7 +44,7 @@ const Presenter = ({ windowWidth, windowHeight }) => (
                     app.renderer.autoDensity = true;
                     app.resize(windowWidth, windowHeight);
                     return (
-                        <>
+                        <Container sortableChildren={true}>
                             <Ground
                                 app={app}
                                 windowWidth={windowWidth}
@@ -54,12 +55,12 @@ const Presenter = ({ windowWidth, windowHeight }) => (
                                 windowWidth={windowWidth}
                                 windowHeight={windowHeight}
                             />
-                        </>
+                        </Container>
                     );
                 }}
             </AppConsumer>
         </Stage>
-    </Container>
+    </PresenterContainer>
 );
 
 export default Presenter;

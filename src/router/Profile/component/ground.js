@@ -16,7 +16,7 @@ class Ground extends React.Component {
 
     tick = (delta) => {
         const { velocity } = this.state;
-        var count = 0.5 * delta;
+        var count = 1 * delta;
         this.setState({ velocity: velocity + count });
     };
 
@@ -28,6 +28,12 @@ class Ground extends React.Component {
         g.endFill();
     };
 
+    getDy = (y, windowHeight, maxHeight) => {
+        //const currentY = (3 / windowHeight) * y * y;
+        const currentY = y > windowHeight / 3 ? y % (windowHeight / 3) : y;
+        const dy = currentY * currentY * (3 / windowHeight) + maxHeight;
+    };
+
     render() {
         const { app, windowWidth, windowHeight } = this.props;
         const { velocity } = this.state;
@@ -36,20 +42,18 @@ class Ground extends React.Component {
                 app={app}
                 draw={(g) => {
                     g.clear();
-                    const divideY = 3;
-                    const maxHeight = (windowHeight * 2) / divideY;
+                    const startY = (windowHeight * 2) / 3;
                     // 가로선
                     for (var i = 0; i < 10; i++) {
                         const y =
-                            (i * windowHeight) / divideY / 10 +
+                            (i * windowHeight) / 3 / 10 +
                             // 가변
                             velocity;
                         //const currentY = (3 / windowHeight) * y * y;
                         const currentY =
                             y > windowHeight / 3 ? y % (windowHeight / 3) : y;
                         const dy =
-                            currentY * currentY * (3 / windowHeight) +
-                            maxHeight;
+                            currentY * currentY * (3 / windowHeight) + startY;
                         const color = Math.round(
                             (dy / (windowHeight / 3)) * 255,
                         ).toString(16);
@@ -66,9 +70,9 @@ class Ground extends React.Component {
                     this.greenLine(
                         g,
                         0,
-                        maxHeight,
+                        startY,
                         windowWidth,
-                        maxHeight,
+                        startY,
                         '0xff00ff',
                     );
                     // 세로선
