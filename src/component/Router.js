@@ -74,7 +74,7 @@ const RetroButton = styled.button`
 `;
 
 const Nav = styled.div`
-    margin: 0 10px;
+    margin: 0 15px;
 
     font-size: 16px;
     color: black;
