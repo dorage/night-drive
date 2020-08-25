@@ -6,6 +6,7 @@ const Container = styled.div`
     width: 100vw;
     height: 100vh;
     padding: 50px 20px;
+    margin: 50px 0px;
 
     display: grid;
     grid-column-gap: 20px;
