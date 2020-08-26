@@ -15,7 +15,7 @@ import gameMachine from './static/image/tattoo/game_machine.png';
 import border from './static/image/stack/border.png';
 import mongodb from './static/image/stack/mongodb.png';
 import node from './static/image/stack/node.png';
-import js from './static/image/stack/js.jpeg';
+import js from './static/image/stack/js.png';
 import python from './static/image/stack/python.png';
 import react from './static/image/stack/react.png';
 import vscode from './static/image/stack/vscode.png';
@@ -23,7 +23,7 @@ import flutter from './static/image/stack/flutter.png';
 import dart from './static/image/stack/dart.png';
 import html from './static/image/stack/html.png';
 import css from './static/image/stack/css.png';
-import unity from './static/image/stack/unity.jpg';
+import unity from './static/image/stack/unity.png';
 
 export const Assets = {
     profile: {
