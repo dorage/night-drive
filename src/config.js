@@ -18,7 +18,6 @@ import node from './static/image/stack/node.png';
 import js from './static/image/stack/js.png';
 import python from './static/image/stack/python.png';
 import react from './static/image/stack/react.png';
-import vscode from './static/image/stack/vscode.png';
 import flutter from './static/image/stack/flutter.png';
 import dart from './static/image/stack/dart.png';
 import html from './static/image/stack/html.png';
@@ -47,7 +46,6 @@ export const Assets = {
         js,
         python,
         react,
-        vscode,
         flutter,
         dart,
         html,
@@ -91,12 +89,12 @@ export const cssColor = {
 
 export const stacks = [
     { src: Assets.stack.html, name: 'HTML', level: 3 },
-    { src: Assets.stack.css, name: 'CSS', level: 2 },
-    { src: Assets.stack.flutter, name: 'Flutter', level: 2 },
+    { src: Assets.stack.css, name: 'CSS', level: 1 },
+    { src: Assets.stack.flutter, name: 'Flutter', level: 1 },
     { src: Assets.stack.dart, name: 'Dart', level: 1 },
-    { src: Assets.stack.react, name: 'ReactJS', level: 2 },
-    { src: Assets.stack.python, name: 'Python', level: 2 },
-    { src: Assets.stack.js, name: 'JS ES6', level: 2 },
-    { src: Assets.stack.mongodb, name: 'MongoDB', level: 2 },
-    { src: Assets.stack.unity, name: 'Unity', level: 2 },
+    { src: Assets.stack.react, name: 'ReactJS', level: 1 },
+    { src: Assets.stack.python, name: 'Python', level: 1 },
+    { src: Assets.stack.js, name: 'JS ES6', level: 1 },
+    { src: Assets.stack.mongodb, name: 'MongoDB', level: 1 },
+    { src: Assets.stack.unity, name: 'Unity', level: 1 },
 ];

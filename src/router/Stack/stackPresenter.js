@@ -41,6 +41,11 @@ const Stack = styled.div`
     :active {
         border-radius: 20px;
         background-color: rgb(200, 200, 200);
+        & > div {
+            filter: invert(1);
+
+            transition: 0.5s;
+        }
     }
 `;
 

@@ -16,6 +16,10 @@ const Container = styled.div`
 // mouse drag move
 // tattoo image
 // interact - information popup
-const Presenter = () => <Container></Container>;
+const Presenter = () => (
+    <Container>
+        <div>CATLOVER▼</div>
+    </Container>
+);
 
 export default Presenter;
