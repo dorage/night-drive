@@ -161,6 +161,12 @@ const Router = () => {
     const linkGithub = () => {
         window.open('https://github.com/dorage', '_blank');
     };
+    const linkBlog = () => {
+        window.open(
+            'https://www.notion.so/dorage/cfa014f546a2486da505dc7cbf3b6c84',
+            '_blank',
+        );
+    };
     return (
         <HashRouter>
             {/* mobile */}
@@ -218,6 +224,9 @@ const Router = () => {
                     >
                         Github
                     </RetroButton>
+                    <RetroButton width="120px" height="40px" onClick={linkBlog}>
+                        Blog
+                    </RetroButton>
                 </div>
             </MobileNavModal>
             {/* web */}
@@ -245,6 +254,9 @@ const Router = () => {
                         onClick={linkGithub}
                     >
                         Github
+                    </RetroButton>
+                    <RetroButton width="110px" height="40px" onClick={linkBlog}>
+                        Blog
                     </RetroButton>
                 </NavGroup>
             </NavBar>

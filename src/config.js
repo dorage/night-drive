@@ -13,6 +13,7 @@ import portraitOriginal from './static/image/portrait_original.jpg';
 import gameMachine from './static/image/tattoo/game_machine.png';
 // stacks
 import border from './static/image/stack/border.png';
+import borderInvert from './static/image/stack/border_invert.png';
 import mongodb from './static/image/stack/mongodb.png';
 import node from './static/image/stack/node.png';
 import js from './static/image/stack/js.png';
@@ -41,6 +42,7 @@ export const Assets = {
     tattoo: { gameMachine },
     stack: {
         border,
+        borderInvert,
         mongodb,
         node,
         js,

@@ -4,20 +4,27 @@ import { stacks, screen, Assets } from '../../config';
 
 const Container = styled.div`
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: 100%;
+    background-color: black;
+`;
+const Header = styled.div`
+    font-size: 24px;
+`;
+
+const StackGrid = styled.div`
+    width: 100%;
     padding: 50px 20px;
+    padding-top: 100px;
 
     display: grid;
     grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    grid-row-gap: 40px;
     grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
     grid-template-rows: repeat(auto-fill, 1fr);
     justify-content: center;
     align-items: center;
-    overflow: scroll;
-`;
-const Header = styled.div`
-    font-size: 24px;
+    background-color: black;
 `;
 
 const Stack = styled.div`
@@ -31,7 +38,7 @@ const Stack = styled.div`
     border: 5px solid rgb(80, 80, 80);
     border-image: url(${Assets.stack.border}) 10 / 32px;
     image-rendering: pixelated;
-
+    color: rgb(150, 150, 150);
     cursor: pointer;
 
     @media (max-width: ${screen.desktopS}) {
@@ -39,13 +46,19 @@ const Stack = styled.div`
     }
     :hover,
     :active {
+        border-image: url(${Assets.stack.borderInvert}) 10 / 32px;
         border-radius: 20px;
-        background-color: rgb(200, 200, 200);
-        & > div {
+        & > :first-child {
             filter: invert(1);
-
-            transition: 0.5s;
+            transition: 0.3s;
         }
+        & > div {
+            color: white;
+            transition: 0.3s;
+        }
+    }
+    &.progress {
+        cursor: initial;
     }
 `;
 
@@ -79,15 +92,20 @@ const getLevel = (level) => {
 
 const Presenter = () => (
     <Container>
-        {stacks.map((elem) => (
-            <Stack>
-                <Icon src={elem.src} />
-                <Info>
-                    <Name>{elem.name}</Name>
-                    <Level>{getLevel(elem.level)}</Level>
-                </Info>
+        <StackGrid>
+            {stacks.map((elem) => (
+                <Stack>
+                    <Icon src={elem.src} />
+                    <Info>
+                        <Name>{elem.name}</Name>
+                        <Level>{getLevel(elem.level)}</Level>
+                    </Info>
+                </Stack>
+            ))}
+            <Stack className={'progress'}>
+                <p>Studying...</p>
             </Stack>
-        ))}
+        </StackGrid>
     </Container>
 );
 
