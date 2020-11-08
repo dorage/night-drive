@@ -147,6 +147,7 @@ const Router = () => {
     const [displayModal, setDisplayModal] = useState(false);
     const copyText = () => {
         var copyText = document.getElementById('email');
+        console.log(copyText);
 
         /* Select the text field */
         copyText.select();
@@ -167,6 +168,63 @@ const Router = () => {
             '_blank',
         );
     };
+    return (
+        <HashRouter>
+            {/* mobile */}
+            <MobileNavBar bgVisible={displayModal}>
+                <RetroButton
+                    width={'35px'}
+                    height={'35px'}
+                    onClick={() => setDisplayModal(!displayModal)}
+                >
+                    <FontAwesomeIcon
+                        icon={displayModal ? faTimes : faBars}
+                        color={displayModal ? 'black' : 'white'}
+                    />
+                </RetroButton>
+            </MobileNavBar>
+            <MobileNavModal display={displayModal}>
+                <Email id="email" value="baloonflower554@gmail.com" />
+                <span />
+                <div>
+                    <RetroButton
+                        width="120px"
+                        height="40px"
+                        onClick={linkGithub}
+                    >
+                        Github
+                    </RetroButton>
+                    <RetroButton width="120px" height="40px" onClick={linkBlog}>
+                        Blog
+                    </RetroButton>
+                </div>
+            </MobileNavModal>
+            {/* web */}
+            <NavBar>
+                <NavGroup>
+                    <RetroButton
+                        width="110px"
+                        height="40px"
+                        onClick={linkGithub}
+                    >
+                        Github
+                    </RetroButton>
+                    <RetroButton width="110px" height="40px" onClick={linkBlog}>
+                        Blog
+                    </RetroButton>
+                </NavGroup>
+            </NavBar>
+            <Switch>
+                <Route exact path="/">
+                    <Redirect to="/profile" />
+                </Route>
+                <Route exact path="/profile" component={Profile} />
+                <Route path="*">
+                    <div>404 nothing~</div>
+                </Route>
+            </Switch>
+        </HashRouter>
+    );
     return (
         <HashRouter>
             {/* mobile */}

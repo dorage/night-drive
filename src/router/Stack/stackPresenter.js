@@ -35,7 +35,7 @@ const Stack = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 5px solid rgb(80, 80, 80);
+    border: 5px solid;
     border-image: url(${Assets.stack.border}) 10 / 32px;
     image-rendering: pixelated;
     color: rgb(150, 150, 150);
